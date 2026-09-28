@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "spllm"
+version = "0.1.0"
+description = "A small personalized GPT-style language model trained from scratch."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.2",
+    "tiktoken>=0.7",
+    "numpy>=1.26",
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+spllm-download-sample = "spllm.cli.download_sample:main"
+spllm-prepare = "spllm.cli.prepare_data:main"
+spllm-train = "spllm.cli.train:main"
+spllm-generate = "spllm.cli.generate:main"
+
+[dependency-groups]
+dev = ["pytest>=8.0"]
+notebooks = ["jupyterlab>=4.0", "matplotlib>=3.8"]
+
+[tool.uv]
+default-groups = ["dev"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/spllm"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,20 @@
+# GPT-2 small architecture (124M params) with a shortened context for local training.
+model:
+  vocab_size: 50257
+  context_length: 256
+  emb_dim: 768
+  n_heads: 12
+  n_layers: 12
+  drop_rate: 0.1
+  qkv_bias: false
+
+train:
+  data_dir: data/processed
+  out_dir: checkpoints/gpt2_small
+  batch_size: 8
+  num_epochs: 10
+  learning_rate: 4.0e-4
+  weight_decay: 0.1
+  eval_freq: 100
+  eval_iters: 20
+  seed: 123
