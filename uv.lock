@@ -3342,6 +3342,7 @@ dependencies = [
     { name = "numpy", version = "2.4.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.11.*'" },
     { name = "numpy", version = "2.5.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
     { name = "pyyaml" },
+    { name = "regex" },
     { name = "tiktoken" },
     { name = "torch" },
 ]
@@ -3360,6 +3361,7 @@ notebooks = [
 requires-dist = [
     { name = "numpy", specifier = ">=1.26" },
     { name = "pyyaml", specifier = ">=6.0" },
+    { name = "regex", specifier = ">=2026.9.10" },
     { name = "tiktoken", specifier = ">=0.7" },
     { name = "torch", specifier = ">=2.2" },
 ]
